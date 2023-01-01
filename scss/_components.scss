@@ -1,0 +1,361 @@
+
+
+.checkbox:checked ~ .navbar-navigation .navbar-navigation-left,
+.checkbox:checked ~ .navbar-navigation .navbar-navigation-right {
+  transform: translateX(0);
+}
+
+.checkbox:checked ~ .hamburger-menu .menu {
+  transform: rotateZ(90deg);
+}
+
+.checkbox:checked ~ .hamburger-menu .menu-line-1 {
+  transform: rotateZ(-40deg);
+}
+
+.checkbox:checked ~ .hamburger-menu .menu-line-2 {
+  opacity: 0;
+}
+
+.checkbox:checked ~ .hamburger-menu .menu-line-3 {
+  transform: rotateZ(40deg);
+}
+
+.navbar {
+  position: relative;
+  z-index: 200;
+
+  &-navigation {
+    display: flex;
+
+    &-left {
+      width: 50vw;
+      height: 100vh;
+      background-color: $color-dark;
+      position: fixed;
+      left: 0;
+      transform: translateX(-50vw);
+      transition: transform 800ms cubic-bezier(1, 0, 0, 1);
+
+      @media (max-width: 800px) {
+        display: none;
+      }
+
+      .left-img {
+        width: 50%;
+        position: absolute;
+        box-shadow: 0 15px 60px 0 rgba($color-black, 0.4);
+        opacity: 0.7;
+        border-radius: 10px;
+
+        @media (max-width: 1300px) {
+          width: 55%;
+        }
+
+        @media (max-width: 1000px) {
+          width: 65%;
+        }
+      }
+
+      .left-img-1 {
+        top: 15%;
+        left: 15%;
+
+        @media (max-width: 1000px) {
+          left: 5%;
+        }
+      }
+
+      .left-img-2 {
+        top: 35%;
+        left: 25%;
+
+        @media (max-width: 1000px) {
+          left: 15%;
+        }
+      }
+
+      .left-img-3 {
+        top: 55%;
+        left: 35%;
+
+        @media (max-width: 1000px) {
+          left: 25%;
+        }
+      }
+    }
+
+    &-right {
+      width: 50vw;
+      height: 100vh;
+      background-color: #1d1d1d;
+      position: fixed;
+      right: 0;
+      @include flexLayout;
+      transform: translateX(50vw);
+      transition: transform 800ms cubic-bezier(1, 0, 0, 1);
+
+      @media (max-width: 800px) {
+        width: 100vw;
+        transform: translateX(100vw);
+      }
+    }
+
+    .nav-list {
+      &-item {
+        list-style: none;
+      }
+
+      &-link {
+        font-family: $font-dancingScript;
+        font-size: 50px;
+        @include textStyles(capitalize);
+        color: $color-secondary;
+        text-decoration: none;
+        display: block;
+        margin: 20px;
+        text-align: center;
+        transition: all 500ms;
+
+        &:hover {
+          color: $color-primary;
+          letter-spacing: 4px;
+        }
+
+        @media (max-width: 600px) {
+          font-size: 40px;
+        }
+      }
+    }
+  }
+}
+
+.logo {
+  font-size: 70px;
+  color: $color-primary;
+  display: block;
+  width: 110px;
+  height: 110px;
+  border: 3px solid $color-primary;
+  border-radius: 50%;
+  margin-right: 20px;
+  text-decoration: none;
+  @include flexLayout;
+
+  @media (max-width: 1000px) {
+    font-size: 50px;
+    width: 90px;
+    height: 90px;
+  }
+
+  @media (max-width: 500px) {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    border-width: 2px;
+  }
+}
+
+.main-name {
+  font-family: $font-nunito;
+  font-size: 50px;
+  color: $color-secondary;
+  @include textStyles;
+
+  @media (max-width: 1000px) {
+    font-size: 40px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+.sub-name {
+  font-family: $font-josefinSans;
+  font-size: 18px;
+  color: $color-secondary;
+  text-align: center;
+  @include textStyles;
+
+  @media (max-width: 500px) {
+    font-size: 12px;
+  }
+}
+
+.main-heading {
+  font-family: $font-dancingScript;
+  font-size: 100px;
+  font-weight: 300;
+  color: $color-primary;
+  margin-bottom: 40px;
+
+  @media (max-width: 1600px) {
+    font-size: 80px;
+  }
+
+  @media (max-width: 1000px) {
+    font-size: 60px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+}
+
+.sub-heading {
+  font-family: $font-josefinSans;
+  font-size: 60px;
+  font-weight: 300;
+  color: $color-secondary;
+  margin-bottom: 80px;
+  text-align: center;
+
+  @media (max-width: 1600px) {
+    font-size: 50px;
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 1300px) {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 1000px) {
+    font-size: 30px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+.main-btn {
+  width: 170px;
+  height: 45px;
+  font-family: $font-josefinSans;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  color: $color-primary;
+  background-color: transparent;
+  border: 1px solid $color-primary;
+  outline: none;
+  cursor: pointer;
+  transition: all 400ms;
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-dark;
+  }
+
+  @media (max-width: 800px) {
+    width: 150px;
+    height: 35px;
+    font-size: 12px;
+  }
+
+  @media (max-width: 500px) {
+    width: 130px;
+    height: 30px;
+    font-size: 10px;
+  }
+}
+
+.card {
+  width: 33.3333%;
+  min-height: 30vw;
+  position: relative;
+  overflow: hidden;
+
+  &:hover &-overlay {
+    transform: translateX(0);
+  }
+
+  &-overlay {
+    @extend %fullSpace;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-color: rgba($color-primary, 0.6);
+    color: $color-white;
+    z-index: 1;
+    @include flexLayout;
+    flex-direction: column;
+    transition: all 700ms;
+
+    &-heading {
+      font-family: $font-nunito;
+      font-size: 50px;
+      @include textStyles(capitalize);
+
+      @media (max-width: 900px) {
+        font-size: 35px;
+      }
+
+      @media (max-width: 650px) {
+        font-size: 25px;
+      }
+
+      @media (max-width: 500px) {
+        display: none;
+      }
+    }
+
+    &-paragraph {
+      font-family: $font-josefinSans;
+      font-size: 30px;
+      margin-bottom: 60px;
+      @include textStyles(capitalize);
+
+      @media (max-width: 900px) {
+        font-size: 20px;
+      }
+
+      @media (max-width: 650px) {
+        font-size: 15px;
+      }
+
+      @media (max-width: 500px) {
+        display: none;
+      }
+    }
+
+    &-btn {
+      width: 150px;
+      height: 40px;
+      color: $color-primary;
+      background-color: $color-white;
+      font-family: $font-josefinSans;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 1px solid $color-primary;
+      border-radius: 30px;
+      outline: none;
+      cursor: pointer;
+
+      @media (max-width: 900px) {
+        font-size: 12px;
+        width: 130px;
+        height: 30px;
+      }
+
+      @media (max-width: 650px) {
+        font-size: 10px;
+        width: 100px;
+      }
+    }
+  }
+
+  &-img {
+    @extend %fullSpace;
+    object-fit: cover;
+    opacity: 0.5;
+  }
+}
